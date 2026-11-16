@@ -1,0 +1,402 @@
+qdiscover: 200 inputs and outputs, from real runs (io/ios.pl has the same as Prolog facts).
+
+1. simplify([])
+   => []
+2. discover(2, 17)
+   => found(0)
+3. commute(cnot(0,2), x(0))
+   => false
+4. simplify([cnot(1,0),cnot(0,1),cnot(1,0),cnot(1,0)])
+   => [cnot(1,0),cnot(0,1)]
+5. discover(4, 9)
+   => found(0)
+6. commute(cnot(2,0), cnot(2,1))
+   => false
+7. simplify([cnot(1,0),x(0),x(1),x(1),x(3),x(3)])
+   => [cnot(1,0),x(0)]
+8. discover(4, 6)
+   => found(0)
+9. commute(cnot(1,0), x(1))
+   => false
+10. simplify([x(0),x(0),x(1),x(1),cnot(1,0),cnot(1,0)])
+   => []
+11. discover(2, 25)
+   => found(0)
+12. commute(x(1), x(0))
+   => true
+13. simplify([])
+   => []
+14. discover(4, 23)
+   => found(0)
+15. commute(x(1), cnot(0,2))
+   => true
+16. simplify([cnot(0,1),cnot(1,0),cnot(0,1),cnot(1,0),cnot(0,1)])
+   => [cnot(0,1),cnot(1,0),cnot(0,1),cnot(1,0),cnot(0,1)]
+17. discover(4, 21)
+   => found(0)
+18. commute(x(1), cnot(1,0))
+   => false
+19. simplify([x(2),cnot(2,0),x(2),x(3)])
+   => [x(2),cnot(2,0),x(2),x(3)]
+20. discover(2, 17)
+   => found(0)
+21. commute(cnot(2,1), cnot(2,1))
+   => false
+22. simplify([cnot(3,1),cnot(2,0),x(0),cnot(1,3)])
+   => [cnot(3,1),cnot(2,0),x(0),cnot(1,3)]
+23. discover(2, 9)
+   => found(0)
+24. commute(x(0), x(0))
+   => false
+25. simplify([cnot(1,3),cnot(2,3),cnot(0,1),cnot(1,0),cnot(1,3),cnot(3,0),cnot(2,1)])
+   => [cnot(1,3),cnot(2,3),cnot(0,1),cnot(1,0),cnot(1,3),cnot(3,0),cnot(2,1)]
+26. discover(4, 15)
+   => found(0)
+27. commute(cnot(2,1), cnot(2,0))
+   => false
+28. simplify([cnot(1,0),cnot(0,2),cnot(0,3),x(1),x(1),x(0),x(0)])
+   => [cnot(1,0),cnot(0,2),cnot(0,3)]
+29. discover(2, 5)
+   => found(0)
+30. commute(x(1), x(2))
+   => true
+31. simplify([cnot(2,1),cnot(2,0)])
+   => [cnot(2,1),cnot(2,0)]
+32. discover(2, 10)
+   => found(0)
+33. commute(cnot(1,0), cnot(2,0))
+   => false
+34. simplify([cnot(2,1),cnot(2,0),x(0)])
+   => [cnot(2,1),cnot(2,0),x(0)]
+35. discover(3, 11)
+   => found(2)
+36. commute(x(2), x(0))
+   => true
+37. simplify([x(0),cnot(1,0),cnot(2,1),cnot(0,1)])
+   => [x(0),cnot(1,0),cnot(2,1),cnot(0,1)]
+38. discover(3, 18)
+   => found(2)
+39. commute(cnot(0,1), cnot(2,0))
+   => false
+40. simplify([cnot(1,2)])
+   => [cnot(1,2)]
+41. discover(3, 21)
+   => found(2)
+42. commute(cnot(1,2), cnot(0,2))
+   => false
+43. simplify([])
+   => []
+44. discover(3, 22)
+   => found(2)
+45. commute(x(0), cnot(0,1))
+   => false
+46. simplify([])
+   => []
+47. discover(4, 23)
+   => found(0)
+48. commute(x(2), cnot(1,2))
+   => false
+49. simplify([x(1),x(0),cnot(1,0),x(1)])
+   => [x(1),x(0),cnot(1,0),x(1)]
+50. discover(4, 15)
+   => found(0)
+51. commute(x(2), cnot(2,1))
+   => false
+52. simplify([x(0),cnot(1,0),cnot(0,1),cnot(0,1),x(0),cnot(1,0)])
+   => [x(0),cnot(1,0),x(0),cnot(1,0)]
+53. discover(3, 16)
+   => found(2)
+54. commute(cnot(1,2), x(0))
+   => true
+55. simplify([x(1),cnot(0,1),cnot(0,1),x(1),x(0),cnot(0,1)])
+   => [x(0),cnot(0,1)]
+56. discover(4, 6)
+   => found(0)
+57. commute(cnot(2,1), cnot(2,0))
+   => false
+58. simplify([cnot(0,1)])
+   => [cnot(0,1)]
+59. discover(2, 10)
+   => found(0)
+60. commute(cnot(1,0), x(2))
+   => true
+61. simplify([cnot(1,0),cnot(0,1),x(1),cnot(1,0),x(0),cnot(1,0),cnot(0,1)])
+   => [cnot(1,0),cnot(0,1),x(1),cnot(1,0),x(0),cnot(1,0),cnot(0,1)]
+62. discover(4, 11)
+   => found(0)
+63. commute(x(1), x(1))
+   => false
+64. simplify([x(0),cnot(0,1),cnot(0,1),cnot(1,0),cnot(1,0),x(1),cnot(0,1)])
+   => [x(0),x(1),cnot(0,1)]
+65. discover(3, 12)
+   => found(2)
+66. commute(cnot(0,1), cnot(2,1))
+   => false
+67. simplify([cnot(0,1),x(1),x(1),cnot(1,0),x(1),cnot(0,1),x(1)])
+   => [cnot(0,1),cnot(1,0),x(1),cnot(0,1),x(1)]
+68. discover(3, 21)
+   => found(2)
+69. commute(cnot(0,2), x(0))
+   => false
+70. simplify([cnot(0,1)])
+   => [cnot(0,1)]
+71. discover(3, 16)
+   => found(2)
+72. commute(cnot(1,0), x(2))
+   => true
+73. simplify([x(0),cnot(1,3)])
+   => [x(0),cnot(1,3)]
+74. discover(2, 25)
+   => found(0)
+75. commute(cnot(1,2), cnot(0,2))
+   => false
+76. simplify([cnot(0,1),cnot(1,0)])
+   => [cnot(0,1),cnot(1,0)]
+77. discover(2, 12)
+   => found(0)
+78. commute(cnot(2,1), x(1))
+   => false
+79. simplify([x(0),cnot(0,1),cnot(0,1),cnot(1,0),cnot(0,1),x(0)])
+   => [x(0),cnot(1,0),cnot(0,1),x(0)]
+80. discover(3, 16)
+   => found(2)
+81. commute(x(0), cnot(0,2))
+   => false
+82. simplify([x(3),cnot(3,2)])
+   => [x(3),cnot(3,2)]
+83. discover(4, 20)
+   => found(0)
+84. commute(x(1), cnot(1,2))
+   => false
+85. simplify([x(1),cnot(3,2),x(1)])
+   => [cnot(3,2)]
+86. discover(4, 19)
+   => found(0)
+87. commute(cnot(2,0), cnot(1,0))
+   => false
+88. simplify([x(2),cnot(3,2),cnot(2,1)])
+   => [x(2),cnot(3,2),cnot(2,1)]
+89. discover(2, 16)
+   => found(0)
+90. commute(cnot(0,1), x(0))
+   => false
+91. simplify([cnot(0,2),cnot(0,2)])
+   => []
+92. discover(3, 13)
+   => found(2)
+93. commute(cnot(2,1), cnot(0,2))
+   => false
+94. simplify([x(3),cnot(3,2),cnot(2,0),x(3),cnot(2,0),x(1),cnot(2,1)])
+   => [x(3),cnot(3,2),x(3),x(1),cnot(2,1)]
+95. discover(4, 25)
+   => found(0)
+96. commute(cnot(2,0), cnot(1,2))
+   => false
+97. simplify([cnot(0,1),cnot(1,2),cnot(2,1)])
+   => [cnot(0,1),cnot(1,2),cnot(2,1)]
+98. discover(2, 18)
+   => found(0)
+99. commute(cnot(2,1), cnot(2,0))
+   => false
+100. simplify([x(2),cnot(2,0),x(0),cnot(1,2)])
+   => [x(2),cnot(2,0),x(0),cnot(1,2)]
+101. discover(4, 14)
+   => found(0)
+102. commute(cnot(0,1), cnot(2,1))
+   => false
+103. simplify([x(1),cnot(1,0)])
+   => [x(1),cnot(1,0)]
+104. discover(3, 25)
+   => found(2)
+105. commute(x(0), cnot(2,1))
+   => true
+106. simplify([cnot(1,0),cnot(0,1)])
+   => [cnot(1,0),cnot(0,1)]
+107. discover(2, 20)
+   => found(0)
+108. commute(cnot(2,1), cnot(1,0))
+   => false
+109. simplify([x(2),cnot(0,2),cnot(2,0),x(0),x(0)])
+   => [x(2),cnot(0,2),cnot(2,0)]
+110. discover(4, 14)
+   => found(0)
+111. commute(cnot(0,1), cnot(1,2))
+   => false
+112. simplify([cnot(1,2),cnot(1,3),cnot(1,0),cnot(2,3),cnot(3,1)])
+   => [cnot(1,2),cnot(1,3),cnot(1,0),cnot(2,3),cnot(3,1)]
+113. discover(4, 16)
+   => found(0)
+114. commute(cnot(2,1), x(0))
+   => true
+115. simplify([x(1),cnot(2,1),x(2)])
+   => [x(1),cnot(2,1),x(2)]
+116. discover(4, 19)
+   => found(0)
+117. commute(cnot(0,2), cnot(1,0))
+   => false
+118. simplify([x(1)])
+   => [x(1)]
+119. discover(4, 18)
+   => found(0)
+120. commute(cnot(2,0), cnot(2,0))
+   => false
+121. simplify([cnot(1,0)])
+   => [cnot(1,0)]
+122. discover(4, 12)
+   => found(0)
+123. commute(cnot(1,0), cnot(1,2))
+   => false
+124. simplify([cnot(1,0),x(0)])
+   => [cnot(1,0),x(0)]
+125. discover(4, 8)
+   => found(0)
+126. commute(cnot(2,1), cnot(1,0))
+   => false
+127. simplify([cnot(1,2),cnot(1,0)])
+   => [cnot(1,2),cnot(1,0)]
+128. discover(4, 18)
+   => found(0)
+129. commute(x(2), cnot(2,1))
+   => false
+130. simplify([x(1),x(0),x(1),cnot(0,2),x(1)])
+   => [x(0),cnot(0,2),x(1)]
+131. discover(4, 6)
+   => found(0)
+132. commute(x(0), cnot(1,2))
+   => true
+133. simplify([cnot(1,2),x(1),cnot(1,3),cnot(1,2),cnot(2,3),cnot(1,0)])
+   => [cnot(1,2),x(1),cnot(1,3),cnot(1,2),cnot(2,3),cnot(1,0)]
+134. discover(4, 10)
+   => found(0)
+135. commute(cnot(0,1), x(0))
+   => false
+136. simplify([cnot(0,1),x(1),cnot(0,1),x(1)])
+   => [cnot(0,1),x(1),cnot(0,1),x(1)]
+137. discover(2, 7)
+   => found(0)
+138. commute(x(0), cnot(0,2))
+   => false
+139. simplify([cnot(0,1),x(1),x(1)])
+   => [cnot(0,1)]
+140. discover(4, 22)
+   => found(0)
+141. commute(x(1), cnot(2,1))
+   => false
+142. simplify([cnot(0,1),x(0),x(1),cnot(1,0),cnot(0,1),cnot(0,1),cnot(0,1)])
+   => [cnot(0,1),x(0),x(1),cnot(1,0),cnot(0,1)]
+143. discover(3, 5)
+   => found(2)
+144. commute(cnot(1,0), cnot(2,0))
+   => false
+145. simplify([x(1),cnot(1,0),cnot(1,0),cnot(1,0)])
+   => [x(1),cnot(1,0)]
+146. discover(4, 12)
+   => found(0)
+147. commute(cnot(1,0), cnot(1,2))
+   => false
+148. simplify([cnot(0,1),cnot(2,1),cnot(1,2),cnot(1,0)])
+   => [cnot(0,1),cnot(2,1),cnot(1,2),cnot(1,0)]
+149. discover(4, 20)
+   => found(0)
+150. commute(cnot(0,1), x(0))
+   => false
+151. simplify([cnot(0,2),cnot(2,1),x(0)])
+   => [cnot(0,2),cnot(2,1),x(0)]
+152. discover(4, 13)
+   => found(0)
+153. commute(cnot(1,0), cnot(0,1))
+   => false
+154. simplify([cnot(0,1),cnot(0,1)])
+   => []
+155. discover(4, 19)
+   => found(0)
+156. commute(x(2), x(0))
+   => true
+157. simplify([cnot(3,2),cnot(1,2),cnot(2,0),cnot(3,1),cnot(0,3),cnot(1,2)])
+   => [cnot(3,2),cnot(1,2),cnot(2,0),cnot(3,1),cnot(0,3),cnot(1,2)]
+158. discover(4, 8)
+   => found(0)
+159. commute(cnot(2,1), cnot(1,2))
+   => false
+160. simplify([cnot(0,1),cnot(2,3),cnot(3,2),x(2),x(1),cnot(3,1),cnot(2,3)])
+   => [cnot(0,1),cnot(2,3),cnot(3,2),x(2),x(1),cnot(3,1),cnot(2,3)]
+161. discover(4, 10)
+   => found(0)
+162. commute(cnot(1,0), x(2))
+   => true
+163. simplify([cnot(1,0),x(1),cnot(2,1),x(1)])
+   => [cnot(1,0),x(1),cnot(2,1),x(1)]
+164. discover(3, 8)
+   => found(2)
+165. commute(x(0), cnot(0,1))
+   => false
+166. simplify([x(0),cnot(0,2),cnot(0,1),cnot(2,1)])
+   => [x(0),cnot(0,2),cnot(0,1),cnot(2,1)]
+167. discover(3, 19)
+   => found(2)
+168. commute(cnot(1,0), cnot(1,2))
+   => false
+169. simplify([x(0),x(1)])
+   => [x(0),x(1)]
+170. discover(3, 8)
+   => found(2)
+171. commute(cnot(0,1), cnot(1,0))
+   => false
+172. simplify([cnot(1,0),cnot(0,1),cnot(1,0)])
+   => [cnot(1,0),cnot(0,1),cnot(1,0)]
+173. discover(3, 15)
+   => found(2)
+174. commute(cnot(2,1), cnot(0,2))
+   => false
+175. simplify([x(2),cnot(1,2),x(1),cnot(1,0),cnot(2,0),cnot(2,0),x(1)])
+   => [x(2),cnot(1,2),x(1),cnot(1,0),x(1)]
+176. discover(2, 14)
+   => found(0)
+177. commute(cnot(0,2), x(0))
+   => false
+178. simplify([cnot(1,2),x(2),cnot(2,0),cnot(3,0),cnot(1,2)])
+   => [cnot(1,2),x(2),cnot(2,0),cnot(3,0),cnot(1,2)]
+179. discover(3, 15)
+   => found(2)
+180. commute(cnot(2,0), cnot(2,0))
+   => false
+181. simplify([cnot(0,2),x(1),cnot(1,2),x(1),cnot(1,0)])
+   => [cnot(0,2),x(1),cnot(1,2),x(1),cnot(1,0)]
+182. discover(3, 8)
+   => found(2)
+183. commute(x(0), cnot(2,0))
+   => false
+184. simplify([cnot(2,1),cnot(1,2),cnot(2,0),cnot(1,2),x(1),cnot(0,1),cnot(1,0)])
+   => [cnot(2,1),cnot(1,2),cnot(2,0),cnot(1,2),x(1),cnot(0,1),cnot(1,0)]
+185. discover(3, 23)
+   => found(2)
+186. commute(x(1), cnot(0,2))
+   => true
+187. simplify([cnot(0,1),cnot(0,1),cnot(0,1),cnot(0,1),cnot(0,1),cnot(1,0),cnot(1,0)])
+   => [cnot(0,1)]
+188. discover(2, 25)
+   => found(0)
+189. commute(cnot(1,2), cnot(2,0))
+   => false
+190. simplify([cnot(2,0),x(0)])
+   => [cnot(2,0),x(0)]
+191. discover(3, 13)
+   => found(2)
+192. commute(x(2), cnot(1,2))
+   => false
+193. simplify([])
+   => []
+194. discover(2, 5)
+   => found(0)
+195. commute(cnot(2,0), cnot(2,1))
+   => false
+196. simplify([cnot(1,2),cnot(0,2),cnot(2,0)])
+   => [cnot(1,2),cnot(0,2),cnot(2,0)]
+197. discover(4, 19)
+   => found(0)
+198. commute(cnot(2,1), x(2))
+   => false
+199. simplify([x(3),x(3),x(0)])
+   => [x(0)]
+200. discover(4, 7)
+   => found(0)
